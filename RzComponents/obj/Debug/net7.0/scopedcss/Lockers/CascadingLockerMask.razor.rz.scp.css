@@ -1,0 +1,16 @@
+.locker-backdrop[b-lzhf6jbcu8] {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 5000;
+}
+
+.locker-loading[b-lzhf6jbcu8] {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5001;
+}

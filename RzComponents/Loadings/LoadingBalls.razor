@@ -1,0 +1,27 @@
+﻿@using RzComponents.Core;
+
+@inherits RzComponentBase
+
+<div class="@classCss" style="@styleCss">
+    <div class="loader-balls">
+        <div class="loader--dot"></div>
+        <div class="loader--dot"></div>
+        <div class="loader--dot"></div>
+        <div class="loader--dot"></div>
+        <div class="loader--dot"></div>
+        <div class="loader--dot"></div>
+    </div>
+</div>
+
+
+@code {
+    string? classCss => CssBuilder.Create(StringBuilderPool,"rz-loader-balls")
+                                                     .ExtractClassFromAttributes(AdditionalAttributes)
+                                                     .Build();
+
+    string? styleCss => CssBuilder.Create(StringBuilderPool)
+                                                     .ExtractStyleFromAttributes(AdditionalAttributes)
+                                                     .Build();
+
+
+}

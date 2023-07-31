@@ -1,0 +1,39 @@
+﻿@page "/"
+
+@using RzComponents;
+
+<PageTitle>Index</PageTitle>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+<button class="btn @btnColorCss" @onclick="TextAction">点击测试长连接操作Locker(10秒)</button>
+
+
+@code{
+    bool isClicked;
+    string btnColorCss => isClicked ? "btn-danger" : "btn-primary";
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [CascadingParameter]
+    ICascadingLocker CascadingLocker { get; set; } = null!;
+
+    private async void TextAction()
+    {
+        isClicked = true;
+        try
+        {
+            CascadingLocker.Lock();//加锁
+            await Task.Delay(10000);
+
+        }
+        finally
+        {        
+            CascadingLocker.Unlock();//解锁
+
+            isClicked = false;
+            StateHasChanged();//!!!异步完成，需要刷新UI
+        }
+
+    }
+}

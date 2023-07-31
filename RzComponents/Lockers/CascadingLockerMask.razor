@@ -1,0 +1,22 @@
+﻿@using RzComponents.Loadings
+
+<!--=======================================-->
+@if (isLock)
+{
+    <div class="locker-backdrop"/>
+
+    <div class="locker-loading">
+        <LoadingBalls/>
+    </div>
+}
+
+@code {
+    bool isLock;
+
+    public void RefreshView(bool flag)
+    {
+        isLock = flag;
+
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,17 @@
+﻿@namespace RzComponents
+
+@using RzComponents.Lockers
+
+<!--=======================================-->
+<CascadingLockerMask @ref="maskRef" />
+
+<CascadingValue Value="@((ICascadingLocker)this)" IsFixed>
+    @ChildContent
+</CascadingValue>
+
+@code {
+    CascadingLockerMask? maskRef;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

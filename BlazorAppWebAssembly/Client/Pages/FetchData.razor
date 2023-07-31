@@ -1,0 +1,66 @@
+﻿@page "/fetchdata"
+@using BlazorAppWebAssembly.Shared
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [CascadingParameter]
+    ICascadingLocker CascadingLocker { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            CascadingLocker.Lock();//加锁
+
+            await Task.Delay(10000);
+            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        }
+        finally
+        {
+            CascadingLocker.Unlock();//解锁
+
+
+            //OnInitializedAsync结束后会重新刷新,所以这里不需要StateHasChanged
+            //StateHasChanged();
+        }
+     
+    }
+}

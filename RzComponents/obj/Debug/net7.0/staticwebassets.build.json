@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "h2KceyOO69e2Z0zDSHR0KLKRYs3TUYYg+o5rgSLHWjY=",
+  "Source": "RzComponents",
+  "BasePath": "_content/RzComponents",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RzComponents\\wwwroot",
+      "Source": "RzComponents",
+      "ContentRoot": "D:\\Blazor 实用组件\\RzComponents\\wwwroot\\",
+      "BasePath": "_content/RzComponents",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\bundle\\RzComponents.styles.css",
+      "SourceId": "RzComponents",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/RzComponents",
+      "RelativePath": "RzComponents.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\bundle\\RzComponents.styles.css"
+    },
+    {
+      "Identity": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\RzComponents.bundle.scp.css",
+      "SourceId": "RzComponents",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/RzComponents",
+      "RelativePath": "RzComponents.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Blazor 实用组件\\RzComponents\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\RzComponents.bundle.scp.css"
+    }
+  ]
+}
